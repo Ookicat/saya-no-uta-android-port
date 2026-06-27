@@ -12,9 +12,7 @@ This project is built upon the hard work of the community:
 *Note: Credits derived from `assets/script/main.scr` (Saya no Uta DS Edition v1.0).*
 
 ## Installation
-
-TBA (Will be available on the GitHub Releases page).
-
+You can download the latest version of the game from the **[GitHub Releases page](https://github.com/Ookicat/saya-no-uta-android-port/releases)**.
 ## Disclaimer
 This is a **fan-made, non-commercial project** and is **not affiliated with, authorized, or endorsed by Nitroplus**.
 
