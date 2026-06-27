@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:saya_no_uta/services/asset_service.dart';
 import 'package:saya_no_uta/services/audio_service.dart';
@@ -6,7 +7,7 @@ import '../../models/command.dart';
 import '../../models/game_state.dart';
 import 'parser.dart';
 
-class GameEngine {
+class GameEngine extends ChangeNotifier {
   final GameState state = GameState();
   final AudioService _audio = AudioService();
   List<Command> _commands = [];
@@ -94,5 +95,23 @@ class GameEngine {
 
       if (!conditionMet) _isSkipping = true;
     }
+
+    notifyListeners();
+  }
+
+  void next() {
+    // Don't proceed if waiting for choice from user
+    if (state.commandIndex > 0) {
+      Command lastCmd = _commands[state.commandIndex - 1];
+      if (lastCmd is ChoiceCommand) return;
+    }
+
+    executeNext();
+  }
+
+  void makeChoice(int index) {
+    // 1-based index
+    state.variables['selected'] = index + 1;
+    executeNext();
   }
 }

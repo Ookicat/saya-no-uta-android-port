@@ -12,7 +12,14 @@ class ScriptParser {
 
       // Handle 'text' command
       if (line.startsWith('text ')) {
-        commands.add(TextCommand(line.substring(5).trim()));
+        String content = line.substring(5).trim();
+
+        // Remove quotes if present
+        if (content.startsWith('"') && content.endsWith('"')) {
+          content = content.substring(1, content.length - 1);
+        }
+
+        commands.add(TextCommand(content));
         continue;
       }
 
