@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:saya_no_uta/ui/screens/game_screen.dart';
 
 void main() {
   runApp(SayaNoUta());
@@ -9,7 +10,10 @@ class SayaNoUta extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
-    throw UnimplementedError();
+    return MaterialApp(
+      title: 'Saya no Uta',
+      debugShowCheckedModeBanner: false,
+      home: GameScreen(),
+    );
   }
 }
