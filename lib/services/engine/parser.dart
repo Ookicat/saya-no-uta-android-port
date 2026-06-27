@@ -10,16 +10,34 @@ class ScriptParser {
       // skip empty and comment line in scripts
       if (line.isEmpty || line.startsWith('#')) continue;
 
+      Command? cmd;
+      if (cmd != null) cmd.rawLine = line;
       // Handle 'text' command
       if (line.startsWith('text ')) {
         String content = line.substring(5).trim();
+
+        // 1. Skip '~' as requested
+        if (content == '~') continue;
+
+        // 2. Handle manual wait '!'
+        if (content == '!') {
+          commands.add(TextCommand("", isWait: true));
+          continue;
+        }
+
+        // 3. Handle instant text '@'
+        bool isInstant = false;
+        if (content.startsWith('@')) {
+          isInstant = true;
+          content = content.substring(1).trim();
+        }
 
         // Remove quotes if present
         if (content.startsWith('"') && content.endsWith('"')) {
           content = content.substring(1, content.length - 1);
         }
 
-        commands.add(TextCommand(content));
+        commands.add(TextCommand(content, isInstant: isInstant));
         continue;
       }
 

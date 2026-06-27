@@ -36,6 +36,7 @@ dependencies:
   cupertino_icons: ^1.0.8
   path_provider: ^2.1.6
   audioplayers: ^6.7.1
+  flutter_launcher_icons: ^0.14.4
 
 dev_dependencies:
   flutter_test:
@@ -62,13 +63,57 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/background/
+    - assets/background/cg/
+    - assets/background/hcg/
     - assets/foreground/
     - assets/script/
     - assets/sound/
+    - assets/sound/music/
+    - assets/sound/voice/
+    - assets/sound/voice/2/
+    - assets/sound/voice/3/
+    - assets/sound/voice/4/
+    - assets/sound/voice/5/
+    - assets/sound/voice/6/
+    - assets/sound/voice/7/
+    - assets/sound/voice/8/
+    - assets/sound/voice/9/
+    - assets/sound/voice/12/
+    - assets/sound/voice/13/
+    - assets/sound/voice/14/
+    - assets/sound/voice/15/
+    - assets/sound/voice/16/
+    - assets/sound/voice/17/
+    - assets/sound/voice/18/
+    - assets/sound/voice/19/
+    - assets/sound/voice/20/
+    - assets/sound/voice/21/
+    - assets/sound/voice/23/
+    - assets/sound/voice/24/
+    - assets/sound/voice/25/
+    - assets/sound/voice/26/
+    - assets/sound/voice/27/
+    - assets/sound/voice/28/
+    - assets/sound/voice/30/
+    - assets/sound/voice/31/
+    - assets/sound/voice/32/
+    - assets/sound/voice/34/
+    - assets/sound/voice/35/
+    - assets/sound/voice/36/
+    - assets/sound/voice/37/
+    - assets/sound/voice/38/
+    - assets/sound/voice/39/
+    - assets/sound/voice/40/
+    - assets/sound/voice/41/
+    - assets/sound/voice/43/
+    - assets/sound/voice/44/
+    - assets/sound/voice/sys/
+    - assets/global.json
     - assets/icon.png
     - assets/info.txt
     - assets/thumbnail.png
     - assets/thumbnail-old.png
+
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
@@ -95,3 +140,10 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/to/font-from-package
+
+flutter_icons:
+  android: true
+  image_path: "assets/icon.png"
+  # Optional: You can specify a background color for Android 8+ adaptive icons
+  # adaptive_icon_background: "#000000"
+  # adaptive_icon_foreground: "assets/icon.png"

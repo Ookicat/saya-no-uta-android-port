@@ -19,5 +19,6 @@ class GameState {
     backgroundPath = "";
     foregroundImages.clear();
     currentMusic = "";
+    commandIndex = 0;
   }
 }

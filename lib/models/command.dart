@@ -1,8 +1,13 @@
-abstract class Command {}
+abstract class Command {
+ String rawLine = "";
+}
 
 class TextCommand extends Command {
   final String content;
-  TextCommand(this.content);
+  final bool isInstant; // True for 'text @...'
+  final bool isWait;    // True for 'text !'
+
+  TextCommand(this.content, {this.isInstant = false, this.isWait = false});
 }
 
 class BgLoadCommand extends Command {
